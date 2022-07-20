@@ -6,17 +6,24 @@ class App extends React.Component {
 	state = {
 		searched:'',
 		results: [
-			{url: 'small url',
-		title: 'Search Results',
-		description: 'description',
-		link: ['www.link.com']
-	},
-		{url: 'small url',
-	   title: 'david',
-	   description: 'description',
-	   link: ['www.link.com']}
-	]
-	}
+		{
+		 url: 'www.goodbye.com',
+		 title: 'Search Results',
+		 description: 'description',
+		 link: ['www.linkplop.com']
+	},{
+		 url: 'www.hello.com',
+	   title: 'Welcom to JavaScript',
+	   description: 'description gg',
+	   link: ['www.link.com']
+	}, {
+	   url: 'www.Whatup.com',
+	   title: 'JavaScript Home',
+	   description: 'ggg',
+	   link: ['www.shrinks.com']
+  }
+ ]
+}
 /*methods */
 
 /*searchbar */
@@ -26,9 +33,9 @@ search = (e) => {
 	})
 }
 /* change the results*/
-changeResult = (a) => {
+changeResult = (e) => {
 	this.setState({
-		results: '',
+		results: this.state.results.filter(e => e.description.includes(this.state.searched))
 	})
 }
 /*render.. veiw */
